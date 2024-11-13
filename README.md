@@ -39,7 +39,17 @@
     │──  slot_seven.h             # 数字7图标
     │──  slot_symbols.h           # 图标数据
 ```
+
 ## 安装与运行
+###运行代码，安装opencv需要的步骤：
+下载 opencv-python 和 opencv-contrib-python 库；
+opencv-python地址：piwheels - opencv-python   https://www.piwheels.org/project/opencv-python/
+opencv-contrib-python地址：piwheels - opencv-contrib-python   https://www.piwheels.org/project/opencv-contrib-python/
+
+使用uname -a查询自己树莓派合适的opencv版本
+![image](https://github.com/user-attachments/assets/8986a20b-48bf-4dec-ad9c-06245554ee95)
+
+
 
 ### 先决条件
 软件依赖：__Arduino IDE__、__VScode__ or __text__ 等   
@@ -88,7 +98,8 @@ https://static-cdn.m5stack.com/resource/arduino/package_m5stack_index.json
 
 ## python版本不兼容问题 不要卸掉树莓派系统自带的python，卸掉了系统会崩溃
 -### 树莓派烧录系统中，目前提供的python只有最新版本3.11，本次介绍如何将python重装的问题。
--###1.更新树莓派系统
+-###建议安装python3.7版本更为适配树莓派使用更加稳定    
+-###1.更新树莓派系统  
 
 1 sudo  apt-get  update
 2 sudo apt-get upgrade -y
@@ -153,6 +164,15 @@ sudo apt-get install libffi-dev
 
 
 ![image](https://github.com/user-attachments/assets/44ec15a4-8126-4484-8635-ce7a358f8dbc)
+
+创建虚拟环境
+python -m venv pytorch
+激活虚拟环境
+source pytorch/bin/activate
+适配numpy版本：
+![image](https://github.com/user-attachments/assets/c7790cfc-bf1a-472e-98d2-790fa5f94fa3)
+
+
 
 
 ## 使用说明
