@@ -1,4 +1,4 @@
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;__Hi👋__，欢迎来到这个关于使用 树莓派4B 实现检测人体是否摔倒项目的教程！这次的项目系列将分为三个部分，而今天你将进入第一个部分，重点介绍如何搭建项目、运行代码以及实现核心功能。  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;__Hi👋__，欢迎来到这个关于使用 树莓派4B 实现检测人体是否摔倒项目的教程！这次的项目系列将分为三个部分，而今天你将进入第一个部分，重点介绍如何做好准备工作、运行代码以及实现核心功能。  
   接下来，将通过以下几个步骤📜，带你深入源码，轻松上手这个项目！准备好了吗？让我们开始吧🚀！  
 - 📝 项目简介
 - ✨ 功能特点
@@ -8,13 +8,13 @@
 - 🔮 下期预告
   
 [演示视频📺]()
-# M5StickCPlus2_Slot 项目
+# 树莓派检测人体摔倒 项目
 ## 项目简介:
 这个项目通过使用树莓派首先通过SSH连接PC端传输vscode等重要文件，接着导入代码包到树莓派中的vscode后，按顺序运行代码。先运行train训练代码，进行提取和训练人体结点后，保存节点位置到csv文件中。利用刚刚得到的csv文件，我们来测试代码，我们可以通过上传一段视频或者打开树莓派摄像，自身站在摄像头前做出动作，如果检测到人体有摔倒那么显示fall,如果检测到人体没有摔倒节点正常那么显示normal。 
 
 本篇文章同时也会详细讲述，安装vscode编程代码,安装FileZilla进行互传文件，安装MobaXtarm进行远程连接树莓派的教程。
 
-也会将遇到的报错问题总结好，以及将python版本不兼容问题一并解决。
+将遇到的报错问题总结好，以及将python版本不兼容问题一并解决。
 
 项目采用了 1.14 英寸的TFT显示屏，展现了五列炫酷的转盘，每列包含 10 个不同的图标，转盘旋转时充满动感🎡。  
   通过 M5StickC Plus2 的按钮交互，玩家可以轻松控制游戏的启动与停止，仿佛置身于真实的老虎机🎮。这个项目不仅展示了 M5StickC Plus2 在图形显示和硬件控制方面的强大能力，还为玩家提供了乐趣满满的互动体验，是硬件开发和游戏开发爱好者绝佳的学习和参考项目💡！
@@ -86,7 +86,7 @@ https://static-cdn.m5stack.com/resource/arduino/package_m5stack_index.json
 
 ![QQ_1726107957719](https://github.com/user-attachments/assets/c1f953ad-5355-44e8-af0c-ac5da7542aa6)  
 
-## python版本不兼容问题
+## python版本不兼容问题 不要卸掉树莓派系统自带的python，卸掉了系统会崩溃
 -### 树莓派烧录系统中，目前提供的python只有最新版本3.11，本次介绍如何将python重装的问题。
 -###1.更新树莓派系统
 
@@ -118,6 +118,41 @@ sudo ./configure && sudo make && sudo make install
 1 python --version
 2 python3 --version
 
+##报错问题
+- ###
+![image](https://github.com/user-attachments/assets/2adf55d0-fb75-4fff-b839-368261629fc8)
+
+假如 Python安装报错：”ModuleNotFoundError:No module named _ctypes“ 的解决方案
+sudo apt-get install libffi-dev
+
+![image](https://github.com/user-attachments/assets/eed2707f-cc15-48c6-9e33-b4a40a5d12de)
+
+
+.建立软连接
+安装python3.7以后我们可以查看python的版本
+
+1 python --version
+2 python3 --version
+
+将python3.7.1软链接到python上,方便使用
+
+查看python和python3.7命令在哪
+
+1 which python
+2 which python3
+
+建立软链接
+
+1 sudo mv /usr/bin/python /usr/bin/python2.7.13
+2 sudo ln -s /usr/local/bin/python3 /usr/bin/python
+
+6.测试是否成功
+
+1 ls -al /usr/local/bin/python*
+1 python --version
+
+
+![image](https://github.com/user-attachments/assets/44ec15a4-8126-4484-8635-ce7a358f8dbc)
 
 
 ## 使用说明
