@@ -49,6 +49,12 @@ opencv-contrib-python地址：piwheels - opencv-contrib-python   https://www.piw
 使用uname -a查询自己树莓派合适的opencv版本
 ![image](https://github.com/user-attachments/assets/8986a20b-48bf-4dec-ad9c-06245554ee95)
 
+![image](https://github.com/user-attachments/assets/4bb34404-9fe2-482c-b59d-7ed8cfcb0b37)
+
+![image](https://github.com/user-attachments/assets/49634ccd-5037-4766-9f2b-8ed612ff9bf5)
+
+
+
 
 
 ### 先决条件
@@ -56,6 +62,16 @@ opencv-contrib-python地址：piwheels - opencv-contrib-python   https://www.piw
 硬件要求：__USB-C数据线__、__M5StickCPlus2__ 等  
 依赖要求：__M5StickCPlus2库__、__Arduino库__
 ### Arduino IDE 安装步骤
+
+opencv依赖的其他库安装：
+
+sudo apt-get install libhdf5-dev
+sudo apt-get install libatlas-base-dev
+sudo apt-get install libjasper-dev
+sudo apt-get install libqt4-test
+sudo apt-get install libqtgui4
+sudo apt-get update
+
 ```
 链接：稍后上传
 ```
