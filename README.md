@@ -53,9 +53,67 @@ opencv-contrib-python地址：piwheels - opencv-contrib-python   https://www.piw
 
 ![image](https://github.com/user-attachments/assets/49634ccd-5037-4766-9f2b-8ed612ff9bf5)
 
+安装报错的解决方法：
+![image](https://github.com/user-attachments/assets/43b705ff-4113-46d1-94aa-6547f1a8850b)
 
 
+在桌面上：
+cd Desktop
+ls 
+pip3 install <安装包名>
+![image](https://github.com/user-attachments/assets/00986329-4855-405b-ac91-54aa601aaedc)
 
+
+之后分别使用如下指令进行安装依赖的numpy和 
+
+sudo apt-get install python3-h5py
+pip3 install numpy （按Tab键自动补全）
+![image](https://github.com/user-attachments/assets/d544cdb9-672e-4c3c-91ad-aa330b484f04)
+
+opencv依赖的其他库安装：
+
+sudo apt-get install libhdf5-dev
+sudo apt-get install libatlas-base-dev
+sudo apt-get install libjasper-dev
+sudo apt-get install libqt4-test
+sudo apt-get install libqtgui4
+sudo apt-get update
+当出现以下确认画面时不要输入y,直接点击enter
+![image](https://github.com/user-attachments/assets/80ab771f-c615-48c5-980e-31cc855b6c60)
+
+安装上述步骤走完基本就已经成功安装OpenCV了
+
+![image](https://github.com/user-attachments/assets/5e7a7468-28f1-4540-abeb-a2b7ac895e7a)
+
+安装vscode:
+![image](https://github.com/user-attachments/assets/6b45c5e3-785c-4a4c-93c1-855bb8b8bec2)
+
+
+![image](https://github.com/user-attachments/assets/9df9bad7-ef5e-4db8-bf7c-22ed2fb9c107)
+
+安装成功后：
+![image](https://github.com/user-attachments/assets/ea277509-b497-4b76-8566-23958d801273)
+
+![image](https://github.com/user-attachments/assets/e1fd0d58-100b-4a9d-9c0f-8c8b502a46c4)
+
+打开远程：
+![82990c40bce1d5be8c360ba056338d25](https://github.com/user-attachments/assets/cec0a368-4f14-44ba-962c-bc4a5e0921d1)
+
+打开摄像头步骤：
+![9c0e721c3f94b627fbdb724d603371dc_720](https://github.com/user-attachments/assets/a193f9e8-d4eb-4a9c-8845-c5084e809d11)
+![b2a24c5c7c22cb5aba1b6f481550edd0_720](https://github.com/user-attachments/assets/8c07e88d-383f-45b5-823d-7dc8498c10d9)
+![d15f0dc4e379cefef9fd5be1c07ea376_720](https://github.com/user-attachments/assets/368f96ad-6e79-450c-9deb-be89f488f3cd)
+
+![b24b0293acafce3bc31c192cc4b936dc_720](https://github.com/user-attachments/assets/c0374e32-99a7-4f82-9cdf-e530fc689b8b)
+![e16696d17803db088ca54a734c738734_720](https://github.com/user-attachments/assets/db3541a1-9984-4921-b087-f9a26a6a4c26)
+
+树莓派上的IDE python运行位置：
+![cad7f71ca307bc83acc661290aa79f46_720](https://github.com/user-attachments/assets/c712ccad-a02f-4b49-8583-6b7db1d85103)
+
+配置code:好处，改报错更加方便：
+![image](https://github.com/user-attachments/assets/0296ca26-4ec2-44ed-9d7f-1b638cccae26)
+打开过程：
+![image](https://github.com/user-attachments/assets/31c92f39-8236-4eb4-a818-a11273778458)
 
 ### 先决条件
 软件依赖：__Arduino IDE__、__VScode__ or __text__ 等   
