@@ -184,6 +184,7 @@ sudo apt-get update
 ![image](https://github.com/user-attachments/assets/9df9bad7-ef5e-4db8-bf7c-22ed2fb9c107)  
 
 
+第二篇：
 
 打开远程：  
 ![82990c40bce1d5be8c360ba056338d25](https://github.com/user-attachments/assets/cec0a368-4f14-44ba-962c-bc4a5e0921d1)  
@@ -215,6 +216,7 @@ sudo apt-get update
 2.运行train.py文件，训练数据后保存人体节点为csv文件，用户按下 Esc 键时直接退出并保存结果。  
 3.进行验证，可以上传一段具有完整人体节点的视频或者打开自己的摄像头进行测试。  
 
+![image](https://github.com/user-attachments/assets/300989ab-8395-4a6d-b718-8fc19c8fdcb0)  
 
 
 
