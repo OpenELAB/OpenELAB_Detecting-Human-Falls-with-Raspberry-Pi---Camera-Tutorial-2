@@ -16,13 +16,11 @@
 
 将遇到的报错问题总结好，以及将python版本不兼容问题一并解决。
 
-项目采用了 1.14 英寸的TFT显示屏，展现了五列炫酷的转盘，每列包含 10 个不同的图标，转盘旋转时充满动感🎡。  
-  通过 M5StickC Plus2 的按钮交互，玩家可以轻松控制游戏的启动与停止，仿佛置身于真实的老虎机🎮。这个项目不仅展示了 M5StickC Plus2 在图形显示和硬件控制方面的强大能力，还为玩家提供了乐趣满满的互动体验，是硬件开发和游戏开发爱好者绝佳的学习和参考项目💡！
 
 ## 功能特点
-- 📏 体积小巧：轻便的设计，适合随身携带，轻松搭建。
-- 🎉 趣味十足：互动性强，仿佛置身于真实的老虎机游戏世界。
-- 🔋 功耗低：高效能低功耗，延长设备使用时间
+- 📏 识别人体节点。
+- 🎉 判断是否摔倒，提高救助率。
+- 
 ## 项目结构
 ``` 
 │──  README.md                # 项目说明文件
@@ -64,8 +62,7 @@ pip3 install <安装包名>
 ![image](https://github.com/user-attachments/assets/00986329-4855-405b-ac91-54aa601aaedc)
 
 
-之后分别使用如下指令进行安装依赖的numpy和 
-
+之后分别使用如下指令进行安装依赖的numpy
 sudo apt-get install python3-h5py
 pip3 install numpy （按Tab键自动补全）
 ![image](https://github.com/user-attachments/assets/d544cdb9-672e-4c3c-91ad-aa330b484f04)
@@ -78,10 +75,10 @@ sudo apt-get install libjasper-dev
 sudo apt-get install libqt4-test
 sudo apt-get install libqtgui4
 sudo apt-get update
-当出现以下确认画面时不要输入y,直接点击enter
+当出现以下确认画面时不要输入y,直接点击enter：
 ![image](https://github.com/user-attachments/assets/80ab771f-c615-48c5-980e-31cc855b6c60)
 
-安装上述步骤走完基本就已经成功安装OpenCV了
+安装上述步骤走完基本就已经成功安装OpenCV了：
 
 ![image](https://github.com/user-attachments/assets/5e7a7468-28f1-4540-abeb-a2b7ac895e7a)
 
@@ -117,8 +114,8 @@ sudo apt-get update
 
 ### 先决条件
 软件依赖：__Arduino IDE__、__VScode__ or __text__ 等   
-硬件要求：__USB-C数据线__、__M5StickCPlus2__ 等  
-依赖要求：__M5StickCPlus2库__、__Arduino库__
+硬件要求：__USB-C数据线__、__树莓派4B__ 等  
+依赖要求：__opencv库__、__pandas库__
 ### Arduino IDE 安装步骤
 
 opencv依赖的其他库安装：
@@ -130,32 +127,9 @@ sudo apt-get install libqt4-test
 sudo apt-get install libqtgui4
 sudo apt-get update
 
-```
-链接：稍后上传
-```
+
 ### 安装依赖
-1、安装好Arduino IDE后，打开Arduino设置，复制M5开发板链接到图示箭头处后点击OK保存
-```
-https://static-cdn.m5stack.com/resource/arduino/package_m5stack_index.json
-```
-![QQ_1726105473838](https://github.com/user-attachments/assets/367bd060-13ab-4eda-9a43-13fbc0250580)  
-  
-2、打开Tools->Board->Boards Manager  
 
-![QQ_1726105693629](https://github.com/user-attachments/assets/e70b4f19-c21a-4ea5-80e2-4d150b54a35f)  
-  
-3、搜索M5Stack，并选择安装，本主机已经安装所以不再重复安装  
-
-![QQ_1726105854495](https://github.com/user-attachments/assets/11b18b6c-c8db-4ea4-b209-d22dd26eebbe) 
-
-4、选择开发版，Tools->Board->M5Stack Arduino->M5StickCPlus2  
-
-![QQ_1726106317846](https://github.com/user-attachments/assets/203d874b-f316-4ae7-827b-2e01493ce08d)
-
-
-5、接下来安装M5StickCPlus2库，选择Tools->Manage Libraries，搜索M5StickCPlus2，再选择安装，此处已经安装就不再重复安装。
-
-![QQ_1726106703496](https://github.com/user-attachments/assets/312bc9e1-521c-479e-831a-a3c22e45a6ec)  
 
 ### 编译运行
 1、完成安装依赖后，打开好下载的压缩包  
@@ -177,26 +151,18 @@ https://static-cdn.m5stack.com/resource/arduino/package_m5stack_index.json
 
 1 sudo  apt-get  update
 2 sudo apt-get upgrade -y
-1
-2
 -###2.安装python依赖环境
 
 sudo apt-get install build-essential libsqlite3-dev sqlite3 bzip2 libbz2-dev
-1
 -###3.下载python3.7版本源码并解压
 
 1 wget https://www.python.org/ftp/python/3.7.1/Python-3.7.1.tgz
 2 tar zxvf Python-3.7.1.tgz
-1
-2
 -###4.安装编译
 
 1 cd Python-3.7.1
-1
-2
-
 sudo ./configure && sudo make && sudo make install
-1
+
 5.建立软连接
 安装python3.7以后我们可以查看python的版本
 
