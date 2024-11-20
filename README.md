@@ -189,11 +189,11 @@ sudo apt-get update
 ![82990c40bce1d5be8c360ba056338d25](https://github.com/user-attachments/assets/cec0a368-4f14-44ba-962c-bc4a5e0921d1)  
 
 打开摄像头步骤：  
-![9c0e721c3f94b627fbdb724d603371dc_720](https://github.com/user-attachments/assets/a193f9e8-d4eb-4a9c-8845-c5084e809d11)  
-![b2a24c5c7c22cb5aba1b6f481550edd0_720](https://github.com/user-attachments/assets/8c07e88d-383f-45b5-823d-7dc8498c10d9)  
-![d15f0dc4e379cefef9fd5be1c07ea376_720](https://github.com/user-attachments/assets/368f96ad-6e79-450c-9deb-be89f488f3cd)  
+![9c0e721c3f94b627fbdb724d603371dc_720](https://github.com/user-attachments/assets/a193f9e8-d4eb-4a9c-8845-c5084e809d11)   
+![b2a24c5c7c22cb5aba1b6f481550edd0_720](https://github.com/user-attachments/assets/8c07e88d-383f-45b5-823d-7dc8498c10d9)   
+![d15f0dc4e379cefef9fd5be1c07ea376_720](https://github.com/user-attachments/assets/368f96ad-6e79-450c-9deb-be89f488f3cd)   
 
-![b24b0293acafce3bc31c192cc4b936dc_720](https://github.com/user-attachments/assets/c0374e32-99a7-4f82-9cdf-e530fc689b8b)  
+![b24b0293acafce3bc31c192cc4b936dc_720](https://github.com/user-attachments/assets/c0374e32-99a7-4f82-9cdf-e530fc689b8b)   
 ![e16696d17803db088ca54a734c738734_720](https://github.com/user-attachments/assets/db3541a1-9984-4921-b087-f9a26a6a4c26)  
 
 树莓派上的IDE python运行位置：  
@@ -210,30 +210,14 @@ sudo apt-get update
 
 ![image](https://github.com/user-attachments/assets/e1fd0d58-100b-4a9d-9c0f-8c8b502a46c4)  
 
-### 编译运行  
-1、完成安装依赖后，打开好下载的压缩包   
-
-![QQ_1726107516108](https://github.com/user-attachments/assets/cb2362f7-1871-418e-94dd-92ddfe7284b7)    
-
-2、使用USB-C将Plus2连接至电脑，选择Tools->Port选择自己的端口    
-
-![QQ_1726107673971](https://github.com/user-attachments/assets/17f0392a-b753-4aba-946c-ede75ba9092f)  
-
-3、点击编译，待编译完成后再点击上传   
-
-![QQ_1726107957719](https://github.com/user-attachments/assets/c1f953ad-5355-44e8-af0c-ac5da7542aa6)  
+### 编译运行    
+1.先运行测试代码，确保摄像头能够成功使用。  
+2.运行train.py文件，训练数据后保存人体节点为csv文件。  
+3.进行验证，可以上传一段具有完整人体节点的视频或者打开自己的摄像头进行测试。  
 
 
 
 
-
-
-## 下期预告
-下期将详细介绍怎么更改老虎机的图片，我们会通过对图片取模获得图片的十六进制参数，并调整成我们想要的格式，然后在老虎机上呈现出我们所需要的图片 __敬请期待!!!__  
-
-![QQ_1726122393803](https://github.com/user-attachments/assets/71507de5-dad0-4688-84bf-56cc25878e35)  
-
-[第二部分链接](https://github.com/OpenELAB/OpenELAB-M5StickCPlus2-Slot-2.git)
 ## 如何联系维护者或开发者
 __OpenELAB:__   
 [![OpenELAB_logo_resized_150](https://github.com/user-attachments/assets/5d3de375-359c-46a3-96bb-aaa211c6c636)](https://openelab.io)  
