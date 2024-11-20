@@ -70,9 +70,10 @@ pip3 install <安装包名>
 ```
 sudo apt-get install python3-h5py  
 pip3 install numpy （按Tab键自动补全）  
-![image](https://github.com/user-attachments/assets/d544cdb9-672e-4c3c-91ad-aa330b484f04)
-```
 
+```
+![image](https://github.com/user-attachments/assets/d544cdb9-672e-4c3c-91ad-aa330b484f04)  
+|
 ### 安装依赖
 opencv依赖的其他库安装：  
 ```
