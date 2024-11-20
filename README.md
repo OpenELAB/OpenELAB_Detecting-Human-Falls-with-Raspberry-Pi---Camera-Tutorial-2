@@ -44,22 +44,24 @@
 opencv-python地址：piwheels - opencv-python   https://www.piwheels.org/project/opencv-python/
 opencv-contrib-python地址：piwheels - opencv-contrib-python   https://www.piwheels.org/project/opencv-contrib-python/
 
-使用uname -a查询自己树莓派合适的opencv版本
-![image](https://github.com/user-attachments/assets/8986a20b-48bf-4dec-ad9c-06245554ee95)
+使用uname -a查询自己树莓派合适的opencv版本  
+![image](https://github.com/user-attachments/assets/8986a20b-48bf-4dec-ad9c-06245554ee95)  
 
-![image](https://github.com/user-attachments/assets/4bb34404-9fe2-482c-b59d-7ed8cfcb0b37)
+![image](https://github.com/user-attachments/assets/4bb34404-9fe2-482c-b59d-7ed8cfcb0b37)  
 
-![image](https://github.com/user-attachments/assets/49634ccd-5037-4766-9f2b-8ed612ff9bf5)
+![image](https://github.com/user-attachments/assets/49634ccd-5037-4766-9f2b-8ed612ff9bf5)  
 
-安装报错的解决方法：
-![image](https://github.com/user-attachments/assets/43b705ff-4113-46d1-94aa-6547f1a8850b)
+安装报错的解决方法：  
+![image](https://github.com/user-attachments/assets/43b705ff-4113-46d1-94aa-6547f1a8850b)  
 
 
-在桌面上：
+在桌面上：  
+```
 cd Desktop
 ls 
 pip3 install <安装包名>
-![image](https://github.com/user-attachments/assets/00986329-4855-405b-ac91-54aa601aaedc)
+```
+![image](https://github.com/user-attachments/assets/00986329-4855-405b-ac91-54aa601aaedc)  
 
 
 之后分别使用如下指令进行安装依赖的numpy
