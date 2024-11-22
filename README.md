@@ -1,108 +1,114 @@
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;__Hi👋__，欢迎来到这个关于使用 树莓派4B 实现检测人体是否摔倒项目的教程！这次的项目系列将分为三个部分，而今天你将进入第一个部分，重点介绍如何做好准备工作、运行代码以及实现核心功能。  
-  接下来，将通过以下几个步骤📜，带你深入源码，轻松上手这个项目！准备好了吗？让我们开始吧🚀！  
-- 📝 项目简介
-- ✨ 功能特点
-- 🏗 项目结构
-- 🚀 安装与运行
-- 🔧 使用说明
-- 🔮 下期预告
-- #注：本项目是基于KNN_人体3D识别骨架的项目进行修改，展示了在树莓派上如何展示的全教学过程。
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hi👋, welcome to this tutorial on using the Raspberry Pi 4B to detect if a person has fallen! This project series will be divided into three parts, and today you will enter the first part, which focuses on how to prepare, run the code, and implement the core functionality.  
+
+Next, we will walk you through the following steps 📜, diving deep into the source code and making it easy for you to get started with this project! Ready? Let’s get started 🚀!  
+- 📝 Project Overview  
+-✨ Features  
+-🏗 Project Structure  
+-🚀 Installation and Running  
+-🔧 Usage Instructions  
+-🔮 Next Episode Preview  
+-Note: This project is a modification of the KNN 3D Human Skeleton Recognition project, demonstrating the complete tutorial on how to run it on the Raspberry Pi.  
   
-[演示视频📺]()
-# 树莓派检测人体摔倒 项目
-## 项目简介:
-这个项目通过使用树莓派首先通过SSH连接PC端传输vscode等重要文件，接着导入代码包到树莓派中的vscode后，按顺序运行代码。先运行train训练代码，进行提取和训练人体结点后，保存节点位置到csv文件中。利用刚刚得到的csv文件，我们来测试代码，我们可以通过上传一段视频或者打开树莓派摄像，自身站在摄像头前做出动作，如果检测到人体有摔倒那么显示fall,如果检测到人体没有摔倒节点正常那么显示normal。 
+# Raspberry Pi Fall Detection Project   
+## Project Overview:  
+This project uses the Raspberry Pi to first connect to the PC via SSH and transfer important files like VSCode. Then, after importing the code package into VSCode on the Raspberry Pi, the code is run in sequence. First, the train code is executed to extract and train human keypoints, and the keypoint positions are saved to a CSV file. Using this CSV file, we can test the code by uploading a video or opening the Raspberry Pi camera. By standing in front of the camera and performing actions, the system will detect if a fall has occurred. If a fall is detected, it will display "fall"; if no fall is detected and the keypoints are normal, it will display "normal."  
 
-本篇文章同时也会详细讲述，安装vscode编程代码,安装FileZilla进行互传文件，安装MobaXtarm进行远程连接树莓派的教程。
+This article also provides detailed instructions on installing VSCode for programming, using FileZilla for file transfer, and using MobaXterm for remote connection to the Raspberry Pi.  
 
-将遇到的报错问题总结好，以及将python版本不兼容问题一并解决。
+The article will summarize common error issues encountered and address Python version incompatibility problems.  
 
 
-## 功能特点
-- 📏 识别人体节点。
-- 🎉 判断是否摔倒，提高救助率。
-- 
-## 项目结构
+Features:  
+-📏 Detect human keypoints.    
+-🎉 Determine if a fall has occurred, improving the rescue rate.   
+## Project Description Files:  
 ``` 
-│──  README.md                # 项目说明文件
-│──  test.py                  # 打开摄像头测试代码
-  │──  train.py               # 训练文件
-  │──  Slot.cpp                 # Slot功能实现文件
-  │──  SLot.h                   # Slot功能定义文件
-  │──  image                    # 图片素材文件夹
+
+
+│── test.py # Camera testing code    
+│── First_train.py # Step 1: Training file  
+│── second_KNN.py # Step 2: Calling the KNN model  
+│── Third_testing.py # Step 3: Open the camera for testing or upload a video  
+│── GIF # Result display
 
   
 ```
-### 先决条件  
-软件依赖：__Arduino IDE__、__VScode__ or __text__ 等   
-硬件要求：__USB-C数据线__、__树莓派4B__ 等  
-依赖要求：__opencv库__、__pandas库__  
-### Arduino IDE 安装步骤  
+### Prerequisites    
+Software Dependencies：__Arduino IDE__、__VScode__ or __text__ ..
+Hardware Requirements：__USB-C data cable__、__, Raspberry Pi 4B__, etc  
+Library Dependencies：__opencv__、__pandas__  
+### Arduino IDE Installation Steps 
 
-## python版本不兼容问题 不要卸掉树莓派系统自带的python，卸掉了系统会崩溃  
--### 树莓派烧录系统中，目前提供的python只有最新版本3.11，本次介绍如何将python重装的问题。   
--###建议安装python3.7版本更为适配树莓派使用更加稳定       
--###1.更新树莓派系统     
+## Python Version Compatibility Issue   
+⚠️ Important: Do not uninstall the pre-installed Python version on Raspberry Pi OS, as it will cause system instability.  
+
+Currently, the Python version provided in the Raspberry Pi system is the latest (Python 3.11). If compatibility issues arise, here are steps to reinstall and adjust the Python version  
+
+Recommended Version:   
+Installing Python 3.7 is suggested for better stability and compatibility with Raspberry Pi applications.    
+    
+-###1.Update the Raspberry Pi system     
 ``` 
 1 sudo  apt-get  update  
 2 sudo apt-get upgrade -y  
 ```
--###2.安装python依赖环境  
+-###2.Install prerequisites  
 ```
-sudo apt-get install build-essential libsqlite3-dev sqlite3 bzip2 libbz2-dev  
+sudo apt-get install build-essential libsqlite3-dev sqlite3 bzip2 libbz2-dev    
 ```
--###3.下载python3.7版本源码并解压  
+-###3.Download and install Python 3.7   
 ```
 1 wget https://www.python.org/ftp/python/3.7.1/Python-3.7.1.tgz  
 2 tar zxvf Python-3.7.1.tgz  
 ```
--###4.安装编译  
+-###4.Verify the Python installation   
 ```
 1 cd Python-3.7.1    
 2 sudo ./configure && sudo make && sudo make install  
 ```
 
-5.建立软连接  
-安装python3.7以后我们可以查看python的版本    
+5.Create a Symbolic Link  
+After installing Python 3.7, we can check the Python version.     
 ```
 1 python --version  
-2 python3 --version  
+2 python3 --version   
 ```
 
-##报错问题  
-- ###
+##  
+6.- ###Error Issues  
 ![image](https://github.com/user-attachments/assets/2adf55d0-fb75-4fff-b839-368261629fc8)  
 
-假如 Python安装报错：”ModuleNotFoundError:No module named _ctypes“ 的解决方案  
+  
 ```
 sudo apt-get install libffi-dev  
 ```
-
+Solution: “ModuleNotFoundError: No module named '_ctypes'”
 ![image](https://github.com/user-attachments/assets/eed2707f-cc15-48c6-9e33-b4a40a5d12de)  
 
 
-.建立软连接  
-安装python3.7以后我们可以查看python的版本  
+
+7.Create a Symbolic Link  
+After installing Python 3.7, you can check the Python version:  
 ```
 1 python --version
 2 python3 --version
 ```
 
-将python3.7.1软链接到python上,方便使用   
+8.To simplify usage, create a symbolic link for Python 3.7.1 pointing to the python command.   
 
-查看python和python3.7命令在哪    
+Check the locations of the python and python3.7 commands:  
 ```
 1 which python
 2 which python3
 ```
 
-建立软链接    
+9.Create the symbolic link:   
 ```
 1 sudo mv /usr/bin/python /usr/bin/python2.7.13
 2 sudo ln -s /usr/local/bin/python3 /usr/bin/python
 ```
 
-6.测试是否成功  
+10.Test the Installation   
 ```
 1 ls -al /usr/local/bin/python*
 2 python --version
@@ -111,72 +117,72 @@ sudo apt-get install libffi-dev
 
 ![image](https://github.com/user-attachments/assets/44ec15a4-8126-4484-8635-ce7a358f8dbc)  
 
-创建虚拟环境  
+11.Create a Virtual Environment  
 ```
 python -m venv pytorch  
 ```
 
-激活虚拟环境  
+Activate the virtual environment:    
 ```
 source pytorch/bin/activate  
 ```
 
-适配numpy版本：  
+Adapting the numpy Version：   
 ![image](https://github.com/user-attachments/assets/c7790cfc-bf1a-472e-98d2-790fa5f94fa3)  
 
 
-## 安装与运行
-###运行代码，安装opencv需要的步骤：  
-下载 opencv-python 和 opencv-contrib-python 库  
-opencv-python地址：piwheels - opencv-python   https://www.piwheels.org/project/opencv-python/  
-opencv-contrib-python地址：piwheels - opencv-contrib-python   https://www.piwheels.org/project/opencv-contrib-python/  
+## Installation and Execution  
+1.Steps to Install OpenCV     
+Download opencv-python 和 opencv-contrib-python    
+opencv-python地址：piwheels - opencv-python   https://www.piwheels.org/project/opencv-python/   
+opencv-contrib-python地址：piwheels - opencv-contrib-python   https://www.piwheels.org/project/opencv-contrib-python/   
 
-使用uname -a查询自己树莓派合适的opencv版本    
+2.Check the suitable OpenCV version for your Raspberry Pi using the following command:   
 ![image](https://github.com/user-attachments/assets/8986a20b-48bf-4dec-ad9c-06245554ee95)  
 
 ![image](https://github.com/user-attachments/assets/4bb34404-9fe2-482c-b59d-7ed8cfcb0b37)  
 
 ![image](https://github.com/user-attachments/assets/49634ccd-5037-4766-9f2b-8ed612ff9bf5)  
 
-安装报错的解决方法：  
+
+3.Troubleshooting Installation Errors:    
 ![image](https://github.com/user-attachments/assets/43b705ff-4113-46d1-94aa-6547f1a8850b)  
 
-
-在桌面上：  
+4.To install the package on the desktop, navigate as follows:    
 ```
-cd Desktop
-ls 
-pip3 install <安装包名>
+cd Desktop  
+ls  
+pip3 install <name>
 ```
 ![image](https://github.com/user-attachments/assets/00986329-4855-405b-ac91-54aa601aaedc)  
 
 
-之后分别使用如下指令进行安装依赖的numpy  
+5.Install numpy Dependency   
 ```
 sudo apt-get install python3-h5py  
-pip3 install numpy （按Tab键自动补全）  
+pip3 install numpy （Tab）  
 
 ```
 ![image](https://github.com/user-attachments/assets/d544cdb9-672e-4c3c-91ad-aa330b484f04)  
 |
-### 安装依赖
-opencv依赖的其他库安装：  
+### Dependencies  
+Install Other OpenCV Dependencies：    
 ```
 sudo apt-get install libhdf5-dev  
 sudo apt-get install libatlas-base-dev   
 sudo apt-get install libjasper-dev  
 sudo apt-get install libqt4-test  
-sudo apt-get install libqtgui4  
+sudo apt-get install libqtgui4   
 sudo apt-get update
 ```
-当出现以下确认画面时不要输入y,直接点击enter：  
+When the confirmation screen appears, press Enter directly without typing "y":    
 ![image](https://github.com/user-attachments/assets/80ab771f-c615-48c5-980e-31cc855b6c60)  
 
-安装上述步骤走完基本就已经成功安装OpenCV了：  
+Following the above steps, OpenCV should be successfully installed:   
 
 ![image](https://github.com/user-attachments/assets/5e7a7468-28f1-4540-abeb-a2b7ac895e7a)  
 
-安装vscode:  
+Install vscode:  
 ![image](https://github.com/user-attachments/assets/6b45c5e3-785c-4a4c-93c1-855bb8b8bec2)  
 
 
@@ -185,7 +191,7 @@ sudo apt-get update
 
 
 
-## 如何联系维护者或开发者
+## How to Contact the Maintainer or Developer   
 __OpenELAB:__   
 [![OpenELAB_logo_resized_150](https://github.com/user-attachments/assets/5d3de375-359c-46a3-96bb-aaa211c6c636)](https://openelab.io)  
 __YouTube:__  
